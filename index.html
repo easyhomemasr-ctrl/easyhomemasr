@@ -141,6 +141,27 @@ object-fit:cover;
 display:block
 }
 
+/* Telegram fallback */
+.telegram-fallback{
+font-size:25px;
+font-weight:bold;
+color:#168BD1;
+background:#EEF4F1;
+}
+
+.telegram-fallback::after{
+content:"➤";
+display:flex;
+align-items:center;
+justify-content:center;
+width:100%;
+height:100%;
+}
+
+.telegram-fallback img{
+display:none
+}
+
 .cart-btn{
 position:relative;
 width:50px;
@@ -254,7 +275,6 @@ justify-content:space-between;
 gap:55px
 }
 
-/* الصورة ناحية الشمال */
 .hero-visual{
 width:500px;
 max-width:48%;
@@ -350,7 +370,6 @@ backface-visibility:hidden;
 box-shadow:0 20px 55px rgba(0,0,0,.22)
 }
 
-/* اللوجو أولاً */
 .hero-payment-front{
 background:#fff;
 display:flex;
@@ -366,7 +385,6 @@ object-fit:cover;
 display:block
 }
 
-/* الخلفية */
 .hero-payment-back{
 transform:rotateY(180deg);
 background:#FBFDFC;
@@ -1476,18 +1494,6 @@ height:92vw
 
 }
 
-@media(max-width:350px){
-
-.products-grid{
-grid-template-columns:1fr
-}
-
-.telegram-btn{
-display:none
-}
-
-}
-
 /* =========================
    TOUCH DEVICES
 ========================= */
@@ -1522,22 +1528,32 @@ transform:none
 
 <!-- اللوجو -->
 <a href="#home" class="logo">
+
 <div class="logo-icon">
 <img src="Icon.jpeg" alt="EasyHomeMasr">
 </div>
+
 <div class="logo-text">EasyHomeMasr</div>
+
 </a>
 
 <!-- روابط الكمبيوتر -->
 <nav class="desktop-nav">
+
 <a href="#home">الرئيسية</a>
 <a href="#products">المنتجات</a>
 <a href="#about">قصتنا</a>
+
 </nav>
 
 <!-- زر الموبايل -->
-<button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="القائمة">
+<button
+class="mobile-menu-btn"
+onclick="toggleMobileMenu()"
+aria-label="القائمة">
+
 ☰
+
 </button>
 
 <!-- الأيقونات ناحية الشمال -->
@@ -1550,8 +1566,11 @@ target="_blank"
 rel="noopener noreferrer"
 aria-label="تواصل معنا عبر واتساب"
 title="تواصل معنا عبر واتساب">
+
 <img src="WhatsIcon.jpg" alt="WhatsApp">
+
 </a>
+
 
 <a
 class="telegram-btn"
@@ -1560,25 +1579,45 @@ target="_blank"
 rel="noopener noreferrer"
 aria-label="تواصل معنا عبر Telegram"
 title="تواصل معنا عبر Telegram">
-<img src="Tele.jpg" alt="Telegram">
+
+<img
+src="Tele.jpg"
+alt="Telegram"
+onerror="this.parentElement.classList.add('telegram-fallback')">
+
 </a>
+
 
 <button
 class="cart-btn"
 onclick="openCart()"
 aria-label="سلة المشتريات"
 title="سلة المشتريات">
+
 🛒
-<span class="cart-count" id="cartCount">0</span>
+
+<span
+class="cart-count"
+id="cartCount">
+
+0
+
+</span>
+
 </button>
 
 </div>
 
+
 <!-- قائمة الموبايل -->
-<div class="mobile-menu" id="mobileMenu">
+<div
+class="mobile-menu"
+id="mobileMenu">
+
 <a href="#home" onclick="closeMobileMenu()">الرئيسية</a>
 <a href="#products" onclick="closeMobileMenu()">المنتجات</a>
 <a href="#about" onclick="closeMobileMenu()">قصتنا</a>
+
 </div>
 
 </div>
@@ -1592,6 +1631,7 @@ title="سلة المشتريات">
 
 <main id="home">
 
+
 <!-- =========================
      HERO
 ========================= -->
@@ -1599,6 +1639,7 @@ title="سلة المشتريات">
 <section class="hero">
 
 <div class="hero-inner">
+
 
 <!-- الكارت ناحية الشمال -->
 <div class="hero-visual">
@@ -1610,10 +1651,16 @@ title="مرر المؤشر على الصورة">
 
 <div class="hero-payment-card-inner">
 
-<!-- الوجه الأول: اللوجو -->
+
+<!-- الوجه الأول -->
 <div class="hero-payment-front">
-<img src="Logo.png" alt="EasyHomeMasr">
+
+<img
+src="Logo.png"
+alt="EasyHomeMasr">
+
 </div>
+
 
 <!-- الوجه الثاني -->
 <div class="hero-payment-back">
@@ -1624,7 +1671,9 @@ title="مرر المؤشر على الصورة">
 ✓
 </div>
 
-<h2>الدفع عند الاستلام</h2>
+<h2>
+الدفع عند الاستلام
+</h2>
 
 <p>
 اطلب براحتك<br>
@@ -1664,8 +1713,12 @@ EasyHomeMasr
 بأسعار واضحة وتجربة شراء بسيطة
 </p>
 
-<a href="#products" class="primary-btn">
+<a
+href="#products"
+class="primary-btn">
+
 إكتشف المجموعة ←
+
 </a>
 
 </div>
@@ -1682,30 +1735,62 @@ EasyHomeMasr
 <section class="section">
 
 <div class="section-title">
-<span>تسوق بسهولة</span>
-<h2>إختر ما يناسبك</h2>
+
+<span>
+تسوق بسهولة
+</span>
+
+<h2>
+إختر ما يناسبك
+</h2>
+
 </div>
+
 
 <div class="categories">
 
-<div class="category" onclick="filterCategory('أجهزة المطبخ')">
+<div
+class="category"
+onclick="filterCategory('أجهزة المطبخ')">
+
 أجهزة المطبخ
+
 </div>
 
-<div class="category" onclick="filterCategory('البوتاجازات')">
+
+<div
+class="category"
+onclick="filterCategory('البوتاجازات')">
+
 البوتاجازات
+
 </div>
 
-<div class="category" onclick="filterCategory('أفران بلت إن')">
+
+<div
+class="category"
+onclick="filterCategory('أفران بلت إن')">
+
 أفران بلت إن
+
 </div>
 
-<div class="category" onclick="filterCategory('منتجات منزلية')">
+
+<div
+class="category"
+onclick="filterCategory('منتجات منزلية')">
+
 منتجات منزلية
+
 </div>
 
-<div class="category" onclick="filterCategory('مستحضرات تجميل')">
+
+<div
+class="category"
+onclick="filterCategory('مستحضرات تجميل')">
+
 مستحضرات تجميل
+
 </div>
 
 </div>
@@ -1717,12 +1802,22 @@ EasyHomeMasr
      PRODUCTS
 ========================= -->
 
-<section class="section" id="products">
+<section
+class="section"
+id="products">
 
 <div class="section-title">
-<span>منتجاتنا</span>
-<h2>كل منتجاتنا</h2>
+
+<span>
+منتجاتنا
+</span>
+
+<h2>
+كل منتجاتنا
+</h2>
+
 </div>
+
 
 <div class="products-tools">
 
@@ -1732,6 +1827,7 @@ id="search"
 type="text"
 placeholder="إبحث عن منتج..."
 oninput="renderProducts()">
+
 
 <select
 class="sort"
@@ -1754,7 +1850,11 @@ onchange="renderProducts()">
 
 </div>
 
-<div class="products-grid" id="productsGrid"></div>
+
+<div
+class="products-grid"
+id="productsGrid">
+</div>
 
 </section>
 
@@ -1763,7 +1863,9 @@ onchange="renderProducts()">
      ABOUT
 ========================= -->
 
-<section class="section" id="about">
+<section
+class="section"
+id="about">
 
 <div class="about">
 
@@ -1816,6 +1918,7 @@ onclick="closeCart()">
 class="cart-panel"
 id="cartPanel">
 
+
 <div class="cart-header">
 
 <h2 id="cartTitle">
@@ -1825,7 +1928,9 @@ id="cartPanel">
 <button
 class="close-cart"
 onclick="closeCart()">
+
 ×
+
 </button>
 
 </div>
@@ -1895,8 +2000,7 @@ autocomplete="tel">
 
 <textarea
 id="customerAddress"
-placeholder="المحافظة - المنطقة - الشارع - رقم العقار - الشقة">
-</textarea>
+placeholder="المحافظة - المنطقة - الشارع - رقم العقار - الشقة"></textarea>
 
 </div>
 
@@ -1909,8 +2013,7 @@ placeholder="المحافظة - المنطقة - الشارع - رقم العق�
 
 <textarea
 id="customerNotes"
-placeholder="أي ملاحظات خاصة بالطلب...">
-</textarea>
+placeholder="أي ملاحظات خاصة بالطلب..."></textarea>
 
 </div>
 
@@ -1927,11 +2030,13 @@ placeholder="أي ملاحظات خاصة بالطلب...">
 مرر المؤشر على اللوجو لمعرفة طريقة الدفع
 </div>
 
+
 <div
 class="payment-card"
 onclick="this.classList.toggle('flipped')">
 
 <div class="payment-card-inner">
+
 
 <div class="payment-card-front">
 
@@ -1940,6 +2045,7 @@ src="Logo.png"
 alt="EasyHomeMasr">
 
 </div>
+
 
 <div class="payment-card-back">
 
@@ -1969,14 +2075,19 @@ alt="EasyHomeMasr">
 <button
 class="back-cart-btn"
 onclick="backToCart()">
+
 ← رجوع
+
 </button>
+
 
 <button
 class="confirm-order-btn"
 id="confirmOrderButton"
 onclick="confirmOrder()">
+
 📨 تأكيد وإرسال الطلب
+
 </button>
 
 </div>
@@ -2009,7 +2120,9 @@ id="orderSuccess">
 <button
 class="success-close"
 onclick="finishOrder()">
+
 إغلاق
+
 </button>
 
 </div>
@@ -2039,10 +2152,13 @@ id="cartFooter">
 
 </div>
 
+
 <button
 class="checkout-btn"
 onclick="showCustomerForm()">
+
 إتمام الطلب
+
 </button>
 
 </div>
@@ -2056,25 +2172,29 @@ onclick="showCustomerForm()">
    STORE DATA
 ========================= */
 
-const STORE_PHONE="201007146970";
+const STORE_PHONE = "201007146970";
 
-const STORE_WHATSAPP="201007146970";
+const STORE_WHATSAPP = "201007146970";
 
-const STORE_TELEGRAM="https://t.me/+201007146970";
+const STORE_TELEGRAM = "https://t.me/+201007146970";
 
 
-/* ضع بيانات البوت هنا */
+/*
+   مهم:
+   لا تضع Bot Token الحقيقي هنا إذا كان الموقع
+   منشورًا على GitHub Pages.
+*/
 
-const TELEGRAM_BOT_TOKEN="ضع_BOT_TOKEN_هنا";
+const TELEGRAM_BOT_TOKEN = "ضع_BOT_TOKEN_هنا";
 
-const TELEGRAM_CHAT_ID="ضع_CHAT_ID_هنا";
+const TELEGRAM_CHAT_ID = "ضع_CHAT_ID_هنا";
 
 
 /* =========================
    PRODUCTS
 ========================= */
 
-const products=[
+const products = [
 
 {
 id:101,
@@ -2269,7 +2389,7 @@ longDescription:"منتج تجميلي 15."
 ];
 
 
-let cart=[];
+let cart = [];
 
 
 /* =========================
@@ -2278,15 +2398,18 @@ let cart=[];
 
 function toggleMobileMenu(){
 
-const menu=document.getElementById("mobileMenu");
+const menu = document.getElementById("mobileMenu");
 
 menu.classList.toggle("show");
 
 }
 
+
 function closeMobileMenu(){
 
-document.getElementById("mobileMenu").classList.remove("show");
+document
+.getElementById("mobileMenu")
+.classList.remove("show");
 
 }
 
@@ -2297,7 +2420,9 @@ document.getElementById("mobileMenu").classList.remove("show");
 
 function toggleHeroCard(card){
 
-if(window.matchMedia("(hover:none)").matches){
+if(
+window.matchMedia("(hover:none)").matches
+){
 
 card.classList.toggle("flipped");
 
@@ -2312,46 +2437,50 @@ card.classList.toggle("flipped");
 
 function renderProducts(){
 
-let list=[...products];
+let list = [...products];
 
-const search=
-document.getElementById("search")
+const search =
+document
+.getElementById("search")
 .value
 .trim()
 .toLowerCase();
 
-const sort=
-document.getElementById("sort")
+const sort =
+document
+.getElementById("sort")
 .value;
 
 
 if(search){
 
-list=list.filter(p=>
+list = list.filter(p =>
 
 p.name.toLowerCase().includes(search) ||
 
 p.category.toLowerCase().includes(search) ||
 
-((p.shortDescription||"")
+(
+(p.shortDescription || "")
 .toLowerCase()
-.includes(search))
+.includes(search)
+)
 
 );
 
 }
 
 
-if(sort==="low")
-list.sort((a,b)=>a.price-b.price);
+if(sort === "low")
+list.sort((a,b) => a.price - b.price);
 
-if(sort==="high")
-list.sort((a,b)=>b.price-a.price);
+if(sort === "high")
+list.sort((a,b) => b.price - a.price);
 
 
-document.getElementById("productsGrid").innerHTML=
+document.getElementById("productsGrid").innerHTML =
 
-list.map(product=>`
+list.map(product => `
 
 <div class="product">
 
@@ -2376,7 +2505,7 @@ ${product.name}
 </h3>
 
 <div class="product-description-short">
-${product.shortDescription||""}
+${product.shortDescription || ""}
 </div>
 
 <div class="price">
@@ -2388,6 +2517,7 @@ class="add-cart"
 onclick="addToCart(${product.id})">
 
 <span>🛒</span>
+
 أضف إلى السلة
 
 </button>
@@ -2401,7 +2531,7 @@ ${product.name}
 </div>
 
 <div>
-${product.longDescription||"لا يوجد وصف تفصيلي متاح حالياً."}
+${product.longDescription || "لا يوجد وصف تفصيلي متاح حالياً."}
 </div>
 
 <span class="tooltip-price">
@@ -2423,9 +2553,9 @@ ${product.price.toLocaleString("ar-EG")} جنيه
 
 function imageError(img){
 
-img.style.display="none";
+img.style.display = "none";
 
-img.parentElement.innerHTML=`
+img.parentElement.innerHTML = `
 
 <span style="color:#718587;font-size:13px;">
 الصورة غير موجودة
@@ -2442,22 +2572,30 @@ img.parentElement.innerHTML=`
 
 function addToCart(productId){
 
-const product=
-products.find(p=>p.id===productId);
+const product =
+products.find(p => p.id === productId);
 
-if(!product)return;
+if(!product)
+return;
 
-const existing=
-cart.find(item=>item.id===productId);
 
-if(existing)
+const existing =
+cart.find(item => item.id === productId);
+
+
+if(existing){
+
 existing.quantity++;
 
-else
+}else{
+
 cart.push({
 ...product,
 quantity:1
 });
+
+}
+
 
 updateCart();
 
@@ -2472,22 +2610,24 @@ openCart();
 
 function updateCart(){
 
-const cartItems=
+const cartItems =
 document.getElementById("cartItems");
 
-const totalQuantity=
+const totalQuantity =
 cart.reduce(
-(sum,item)=>sum+item.quantity,
+(sum,item) => sum + item.quantity,
 0
 );
 
-document.getElementById("cartCount")
-.textContent=totalQuantity;
+
+document
+.getElementById("cartCount")
+.textContent = totalQuantity;
 
 
-if(cart.length===0){
+if(cart.length === 0){
 
-cartItems.innerHTML=`
+cartItems.innerHTML = `
 
 <div class="empty-cart">
 
@@ -2503,17 +2643,18 @@ cartItems.innerHTML=`
 
 `;
 
-document.getElementById("cartTotal")
-.textContent="0";
+document
+.getElementById("cartTotal")
+.textContent = "0";
 
 return;
 
 }
 
 
-cartItems.innerHTML=
+cartItems.innerHTML =
 
-cart.map(item=>`
+cart.map(item => `
 
 <div class="cart-item">
 
@@ -2569,14 +2710,17 @@ onclick="removeFromCart(${item.id})">
 `).join("");
 
 
-const total=
+const total =
 cart.reduce(
-(sum,item)=>sum+item.price*item.quantity,
+(sum,item) =>
+sum + item.price * item.quantity,
 0
 );
 
-document.getElementById("cartTotal")
-.textContent=
+
+document
+.getElementById("cartTotal")
+.textContent =
 total.toLocaleString("ar-EG");
 
 }
@@ -2588,21 +2732,25 @@ total.toLocaleString("ar-EG");
 
 function changeQuantity(productId,amount){
 
-const item=
-cart.find(p=>p.id===productId);
+const item =
+cart.find(p => p.id === productId);
 
-if(!item)return;
+if(!item)
+return;
 
-item.quantity+=amount;
 
-if(item.quantity<=0){
+item.quantity += amount;
 
-cart=
+
+if(item.quantity <= 0){
+
+cart =
 cart.filter(
-p=>p.id!==productId
+p => p.id !== productId
 );
 
 }
+
 
 updateCart();
 
@@ -2615,9 +2763,9 @@ updateCart();
 
 function removeFromCart(productId){
 
-cart=
+cart =
 cart.filter(
-p=>p.id!==productId
+p => p.id !== productId
 );
 
 updateCart();
@@ -2639,7 +2787,7 @@ document
 .getElementById("cartOverlay")
 .classList.add("show");
 
-document.body.style.overflow="hidden";
+document.body.style.overflow = "hidden";
 
 }
 
@@ -2658,9 +2806,10 @@ document
 .getElementById("cartOverlay")
 .classList.remove("show");
 
-document.body.style.overflow="";
+document.body.style.overflow = "";
 
-setTimeout(()=>{
+
+setTimeout(() => {
 
 document
 .getElementById("customerForm")
@@ -2672,15 +2821,15 @@ document
 
 document
 .getElementById("cartItems")
-.style.display="";
+.style.display = "";
 
 document
 .getElementById("cartFooter")
-.style.display="";
+.style.display = "";
 
 document
 .getElementById("cartTitle")
-.textContent="سلة المشتريات";
+.textContent = "سلة المشتريات";
 
 },300);
 
@@ -2693,7 +2842,7 @@ document
 
 function showCustomerForm(){
 
-if(cart.length===0){
+if(cart.length === 0){
 
 alert("السلة فارغة، أضف منتجًا أولاً.");
 
@@ -2701,13 +2850,14 @@ return;
 
 }
 
+
 document
 .getElementById("cartItems")
-.style.display="none";
+.style.display = "none";
 
 document
 .getElementById("cartFooter")
-.style.display="none";
+.style.display = "none";
 
 document
 .getElementById("customerForm")
@@ -2715,7 +2865,7 @@ document
 
 document
 .getElementById("cartTitle")
-.textContent="إتمام الطلب";
+.textContent = "إتمام الطلب";
 
 }
 
@@ -2732,15 +2882,15 @@ document
 
 document
 .getElementById("cartItems")
-.style.display="";
+.style.display = "";
 
 document
 .getElementById("cartFooter")
-.style.display="";
+.style.display = "";
 
 document
 .getElementById("cartTitle")
-.textContent="سلة المشتريات";
+.textContent = "سلة المشتريات";
 
 }
 
@@ -2751,18 +2901,21 @@ document
 
 function validateCustomerData(){
 
-const name=
-document.getElementById("customerName")
+const name =
+document
+.getElementById("customerName")
 .value
 .trim();
 
-const phone=
-document.getElementById("customerPhone")
+const phone =
+document
+.getElementById("customerPhone")
 .value
 .trim();
 
-const address=
-document.getElementById("customerAddress")
+const address =
+document
+.getElementById("customerAddress")
 .value
 .trim();
 
@@ -2805,6 +2958,7 @@ return false;
 
 }
 
+
 return true;
 
 }
@@ -2816,34 +2970,40 @@ return true;
 
 function createTelegramMessage(){
 
-const name=
-document.getElementById("customerName")
+const name =
+document
+.getElementById("customerName")
 .value
 .trim();
 
-const phone=
-document.getElementById("customerPhone")
+const phone =
+document
+.getElementById("customerPhone")
 .value
 .trim();
 
-const address=
-document.getElementById("customerAddress")
+const address =
+document
+.getElementById("customerAddress")
 .value
 .trim();
 
-const notes=
-document.getElementById("customerNotes")
+const notes =
+document
+.getElementById("customerNotes")
 .value
 .trim();
 
-const total=
+
+const total =
 cart.reduce(
-(sum,item)=>sum+item.price*item.quantity,
+(sum,item) =>
+sum + item.price * item.quantity,
 0
 );
 
 
-let message=`🛍️ طلب جديد - EasyHomeMasr
+let message = `🛍️ طلب جديد - EasyHomeMasr
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -2860,7 +3020,7 @@ ${address}`;
 
 if(notes){
 
-message+=`
+message += `
 
 📝 ملاحظات:
 ${notes}`;
@@ -2868,7 +3028,7 @@ ${notes}`;
 }
 
 
-message+=`
+message += `
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -2877,14 +3037,15 @@ message+=`
 `;
 
 
-cart.forEach((item,index)=>{
+cart.forEach((item,index) => {
 
-const itemTotal=
-item.price*item.quantity;
+const itemTotal =
+item.price * item.quantity;
 
-message+=`
 
-${index+1}️⃣ ${item.name}
+message += `
+
+${index + 1}️⃣ ${item.name}
 
 الكمية: ${item.quantity}
 
@@ -2899,7 +3060,7 @@ ${itemTotal.toLocaleString("ar-EG")} جنيه
 });
 
 
-message+=`
+message += `
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -2932,7 +3093,7 @@ async function sendTelegramMessage(message){
 
 if(
 !TELEGRAM_BOT_TOKEN ||
-TELEGRAM_BOT_TOKEN==="ضع_BOT_TOKEN_هنا"
+TELEGRAM_BOT_TOKEN === "ضع_BOT_TOKEN_هنا"
 ){
 
 throw new Error(
@@ -2944,7 +3105,7 @@ throw new Error(
 
 if(
 !TELEGRAM_CHAT_ID ||
-TELEGRAM_CHAT_ID==="ضع_CHAT_ID_هنا"
+TELEGRAM_CHAT_ID === "ضع_CHAT_ID_هنا"
 ){
 
 throw new Error(
@@ -2954,11 +3115,11 @@ throw new Error(
 }
 
 
-const url=
+const url =
 `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
 
-const response=
+const response =
 await fetch(
 url,
 {
@@ -2982,7 +3143,7 @@ disable_web_page_preview:true
 );
 
 
-const data=
+const data =
 await response.json();
 
 
@@ -3013,7 +3174,8 @@ async function confirmOrder(){
 if(!validateCustomerData())
 return;
 
-if(cart.length===0){
+
+if(cart.length === 0){
 
 alert("السلة فارغة.");
 
@@ -3022,15 +3184,15 @@ return;
 }
 
 
-const button=
+const button =
 document.getElementById(
 "confirmOrderButton"
 );
 
 
-button.disabled=true;
+button.disabled = true;
 
-button.textContent=
+button.textContent =
 "⏳ جاري إرسال الطلب...";
 
 
@@ -3047,11 +3209,11 @@ document
 
 document
 .getElementById("cartItems")
-.style.display="none";
+.style.display = "none";
 
 document
 .getElementById("cartFooter")
-.style.display="none";
+.style.display = "none";
 
 document
 .getElementById("orderSuccess")
@@ -3059,10 +3221,10 @@ document
 
 document
 .getElementById("cartTitle")
-.textContent="تم تأكيد الطلب";
+.textContent = "تم تأكيد الطلب";
 
 
-cart=[];
+cart = [];
 
 updateCart();
 
@@ -3074,6 +3236,7 @@ console.error(
 error
 );
 
+
 alert(
 "حدث خطأ أثناء إرسال الطلب إلى Telegram.\n\nتأكد من Bot Token و Chat ID واتصال الإنترنت."
 );
@@ -3083,9 +3246,9 @@ alert(
 
 finally{
 
-button.disabled=false;
+button.disabled = false;
 
-button.textContent=
+button.textContent =
 "📨 تأكيد وإرسال الطلب";
 
 }
@@ -3105,7 +3268,7 @@ document
 
 document
 .getElementById("cartTitle")
-.textContent="سلة المشتريات";
+.textContent = "سلة المشتريات";
 
 document
 .getElementById("cartPanel")
@@ -3115,29 +3278,25 @@ document
 .getElementById("cartOverlay")
 .classList.remove("show");
 
-document.body.style.overflow="";
+document.body.style.overflow = "";
 
 
-document.getElementById("customerName")
-.value="";
+document.getElementById("customerName").value = "";
 
-document.getElementById("customerPhone")
-.value="";
+document.getElementById("customerPhone").value = "";
 
-document.getElementById("customerAddress")
-.value="";
+document.getElementById("customerAddress").value = "";
 
-document.getElementById("customerNotes")
-.value="";
+document.getElementById("customerNotes").value = "";
 
 
 document
 .getElementById("cartItems")
-.style.display="";
+.style.display = "";
 
 document
 .getElementById("cartFooter")
-.style.display="";
+.style.display = "";
 
 }
 
@@ -3150,9 +3309,10 @@ function filterCategory(category){
 
 document
 .getElementById("search")
-.value=category;
+.value = category;
 
 renderProducts();
+
 
 document
 .getElementById("products")
